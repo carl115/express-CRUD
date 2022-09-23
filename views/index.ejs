@@ -36,22 +36,30 @@
                 </form>
             </div>
         </div>
-        <div class="card mx-5" style="width: 450px; height: 450px; margin-top: 50px; overflow: auto;">
+        <div class="card mx-5 px-2" style="width: 450px; height: 450px; margin-top: 50px; overflow: auto;">
             <div class="card-body">
-                <h2 class="card-title text-center">Products list</h2>
+                <h2 class="card-title text-center mb-4">Products list</h2>
                 <% for(let i = 0; i < product.length; i++) { %>
-                    <div class="row">
-                        <div class="col" style="border-right: 1px solid #000;">
+                    <div class="row my-3">
+                        <div class="col py-3" 
+                             style="
+                             border-top: 1px solid #DCDCDC;  
+                             border-bottom: 1px solid #DCDCDC;
+                        ">
                             <strong><%= product[i].name %></strong>
-                            <p><%= product[i].description %></p>
+                            <p class="m-0"><%= product[i].description %></p>
                         </div>
-                        <div class="col-5 d-flex align-items-center justify-content-center">
-                            <a href="" class="btn btn-primary mx-1">
+                        <div class="col-5 d-flex align-items-center justify-content-center" 
+                             style="
+                             border-top: 1px solid #DCDCDC; 
+                             border-bottom: 1px solid #DCDCDC;
+                        ">
+                            <a href="/editProduct" class="btn btn-primary mx-1">
                                 Edit
                             </a>
-                            <a href="" class="btn btn-danger mx-1">
-                               Delete
-                            </a>
+                            <a href="/deleteProduct?id=2" class="btn btn-danger mx-1">
+                                Delete
+                             </a>
                         </div>
                     </div>
                 <% } %>
