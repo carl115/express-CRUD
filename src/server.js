@@ -1,10 +1,8 @@
 import express from 'express'
 import morgan from 'morgan'
-const { pathname: root } = new URL('../src', import.meta.url)
+//const { pathname: root } = new URL('../src', import.meta.url)
 
-//VIEWS
-import Main from './routes/main.js'
-//
+import routes from './routes/routes.js'
 
 const app = express()
 
@@ -15,7 +13,7 @@ app.set('view engine', 'ejs')
 app.set('port', 3000)
 
 //VIEWS
-app.use('/', Main)
+app.use(routes)
 //
 
 //Consults
@@ -25,7 +23,7 @@ app.use('/', Main)
 //const result = await conn.query(`DELETE FROM product WHERE id = 1`)
 //const result = await conn.query(`UPDATE product SET name = "xxxx", description = "xxxx" WHERE id = 2`)
 
-app.use('/public', express.static(root + '/public'))
+app.use((req, res, next) => res.status(404).send('Page not found'))
 
 app.listen(app.get('port'))
 console.log(`Server listen on port ${app.get('port')}`);
