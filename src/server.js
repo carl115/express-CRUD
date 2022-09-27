@@ -1,6 +1,5 @@
 import express from 'express'
 import morgan from 'morgan'
-//const { pathname: root } = new URL('../src', import.meta.url)
 
 import routes from './routes/routes.js'
 
