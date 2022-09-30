@@ -5,8 +5,6 @@ let router = Router()
 
 router.get('/', async (req, res) => {
     const [product] = await conn.query(`SELECT * FROM product`)
-
-    const edit = (number) => console.log(number)
     
     const title = 'Express CRUD'
     const titlePage = 'CRUD with Express and MySQL'

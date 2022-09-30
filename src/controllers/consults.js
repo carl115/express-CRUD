@@ -6,8 +6,6 @@ export const createProduct = async (req, res) => {
     
     const result = await conn.query('INSERT INTO product(name, description) VALUES(?, ?)', [product_name, description])
 
-    console.log(result);
-
     res.redirect('http://localhost:3000')
 }
 
@@ -15,10 +13,15 @@ export const editProduct = (req, res) => {
     res.redirect('http://localhost:3000')
 }
 
-export const deleteProduct = async (req, res) => {
-    const id = req.query.id
+export const deleteProduct = (req, res) => {
+    const id = req.body.id
 
+    console.log(id);
+
+    res.sendStatus(204)
+    /*
     const result = await conn.query('DELETE FROM product WHERE id = ?', [id])
 
     res.redirect('http://localhost:3000')
+    */
 }

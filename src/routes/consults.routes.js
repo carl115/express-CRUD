@@ -7,7 +7,7 @@ let router = Router()
 let urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 router.post('/create-product', urlencodedParser, createProduct)
-router.get('/edit-product', editProduct)
-router.get('/delete-product', deleteProduct)
+router.get('/edit/:id', editProduct)
+router.post('/delete-product', urlencodedParser, deleteProduct)
 
 export default router

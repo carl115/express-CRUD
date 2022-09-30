@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+
+    <!-- STYLES BOOTSTRAP -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+        crossorigin="anonymous" 
+    />
+    <!--/-->
+</head>
+<body style="background: #EAEAEA;">
+    <div class="bg-dark py-2 m-0 d-flex align-items-center justify-content-center">
+        <p class="display-6 text-white" style="margin: 0;"><%= titlePage %></p>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="card mx-5" style="width: 350px; height: 450px; margin-top: 50px;">
+            <div class="card-body">
+                <h2 class="card-title text-center">Edit product</h3>
+                <form action="/edit" method="POST">
+                    <div class="my-4">
+                        <label class="fs-5 mb-3">Product name</label>
+                        <input type="text" name="product_name" class="form-control" />
+                    </div>
+                    <div class="my-4">
+                        <label class="fs-5 mb-3">Description</label>
+                        <textarea name="description" class="form-control" style="height: 100px; resize: none;"></textarea>
+                    </div>
+                    <input type="submit" value="Save" class="btn btn-lg btn-primary btn-display" style="width: 100%;" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+
+    <!-- SCRIPTS BOOTSTRAP -->
+    <script 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" 
+        crossorigin="anonymous">
+    </script>
+    <!--/-->
+</body>
+</html>
