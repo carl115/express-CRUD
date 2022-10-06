@@ -23,7 +23,7 @@
         <div class="card mx-5" style="width: 350px; height: 450px; margin-top: 50px;">
             <div class="card-body">
                 <h2 class="card-title text-center">Create a product</h3>
-                <form action="/createProduct" method="POST">
+                <form action="/create-product" method="POST">
                     <div class="my-4">
                         <label class="fs-5 mb-3">Product name</label>
                         <input type="text" name="product_name" class="form-control" />
@@ -39,38 +39,12 @@
         <div class="card mx-5 px-2" style="width: 450px; height: 450px; margin-top: 50px; overflow: auto;">
             <div class="card-body">
                 <h2 class="card-title text-center mb-4">Product list</h2>
-                <% for(let i = 0; i < product.length; i++) { %>
-                    <div class="row my-3">
-                        <div 
-                        class="col py-3" 
-                        style="
-                        border-top: 1px solid #DCDCDC;  
-                        border-bottom: 1px solid #DCDCDC;
-                        ">
-                            <strong><%= product[i].name %></strong>
-                            <p class="m-0"><%= product[i].description %></p>
-                        </div>
-                        <div 
-                        class="col-5 d-flex align-items-center justify-content-center" 
-                        style="
-                        border-top: 1px solid #DCDCDC; 
-                        border-bottom: 1px solid #DCDCDC;
-                        ">
-                            <a href="/edit-product" class="btn btn-primary mx-1">
-                                Edit
-                            </a>
-                            <form action="/delete-product" method="POST">
-                                <input type="hidden" name="id" value="1" />
-                                <input type="submit" value="Delete" class="btn btn-danger mx-1" />
-                            </form>
-                        </div>
-                    </div>
-                <% } %>
+                <div id="listBody" style="padding:0 10px;"></div>
             </div>
         </div>
     </div>
 
-    <script src="../src/public/index.js"></script>
+    <script src="/index.js"></script>
 
     <!-- SCRIPTS BOOTSTRAP -->
     <script 

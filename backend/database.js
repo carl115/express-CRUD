@@ -1,6 +1,6 @@
-import { createConnection } from 'mysql2/promise'
+const { createPool } = require('mysql2/promise')
 
-const conn = await createConnection({
+const pool = createPool({
     host: 'localhost',
     user: 'root',
     password: 'password',
@@ -8,4 +8,4 @@ const conn = await createConnection({
     database: 'expresscrud'
 })
 
-export default conn
+module.exports = pool

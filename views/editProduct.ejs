@@ -24,13 +24,14 @@
             <div class="card-body">
                 <h2 class="card-title text-center">Edit product</h3>
                 <form action="/edit" method="POST">
+                    <input type="hidden" name="id" value="<%= product[0].id %>" />
                     <div class="my-4">
                         <label class="fs-5 mb-3">Product name</label>
-                        <input type="text" name="product_name" class="form-control" />
+                        <input type="text" name="product_name" class="form-control" value="<%= product[0].name %>" />
                     </div>
                     <div class="my-4">
                         <label class="fs-5 mb-3">Description</label>
-                        <textarea name="description" class="form-control" style="height: 100px; resize: none;"></textarea>
+                        <textarea name="description" class="form-control" style="height: 100px; resize: none;"><%= product[0].description %></textarea>
                     </div>
                     <input type="submit" value="Save" class="btn btn-lg btn-primary btn-display" style="width: 100%;" />
                 </form>
